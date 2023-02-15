@@ -3,11 +3,13 @@
     <h1>CART</h1>
 
     {% for item in cart.items %}
-    <div>
-    <img src="{{ item.image | image_url: width: 150 }}">
-    <h2>{{ item.title }}</h2>
-    <p>{{ item.price | money }}</p>
-    </div>
+        <div>
+            <img src="{{ item.image | image_url: width: 150 }}">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.price | money }}</p>
+            <input type="number" name="updates[]" value="{{ item.quantity }}" onchange="this.form.submit()">
+            <a href="{{ item.url_to_remove }}">Remove</a>
+        </div>
     {% endfor %}
 
     <hr/>
