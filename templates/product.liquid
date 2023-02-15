@@ -1,6 +1,6 @@
 <h1>{{ product.title }}</h1>
 <p>{{ product.price | money }}</p>
-
+<img>{{ product | image_url: width: 400 | image_tag }}</img>
 <div>
     {{ product.description }}
 </div>
