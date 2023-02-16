@@ -11,6 +11,9 @@
                 <p>{{ item.price | money }}</p>
                 <input type="number" name="updates[]" value="{{ item.quantity }}" onchange="this.form.submit()">
                 <a href="{{ item.url_to_remove }}">Remove</a>
+                {% if item.quantity > 1 %}
+                    <p>Item Subtotal: {{ item.final_line_price | money }}</p>
+                {% endif %}
             </div>
         {% endfor %}
         <hr/>
